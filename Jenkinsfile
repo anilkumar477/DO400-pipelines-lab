@@ -17,7 +17,7 @@ pipeline{
                             expression{ return params.RUN_INTEGRATION_TESTS}
                         }
                         steps{
-                            sh './mvnw test -d testGroups=integration'
+                            sh './mvnw test -D testGroups=integration'
                         }
                     }
                 
