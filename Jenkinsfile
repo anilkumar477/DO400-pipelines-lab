@@ -18,7 +18,7 @@ pipeline{
                         }
                         try{
                             sh './mvnw test -D testGroups=integration'
-                        }catch('ex'){
+                        }catch(ex){
                             echo "Error while enerationg JAR file"
                             throw ex
                         }
