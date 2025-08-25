@@ -16,12 +16,21 @@ pipeline{
                         when{
                             expression{ return params.RUN_INTEGRATION_TESTS}
                         }
-                        steps{
+                        try{
                             sh './mvnw test -D testGroups=integration'
+                        }catch('ex'){
+                            echo "Error while enerationg JAR file"
+                            throw ex
                         }
                     }
                 
             }
+        }
+        stage('Build'){
+            steps{
+                sh './mvnw package -D skipTests'
+            }
+
         }
     }
 }
