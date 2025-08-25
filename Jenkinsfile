@@ -23,6 +23,7 @@ pipeline{
                 
             }
         }
+        }
         stage('Build'){
             steps{
                 script{
@@ -37,5 +38,4 @@ pipeline{
 
         }
     }
-}
 }
