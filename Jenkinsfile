@@ -25,7 +25,7 @@ pipeline{
             steps{
                 script{
                     try{
-                        sh './mvnw test -D testGroups=integration'
+                        sh './mvnw package -D skipTests'
                     }catch(ex){
                         echo "Error while enerationg JAR file"
                         throw ex
